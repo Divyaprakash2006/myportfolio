@@ -1,0 +1,240 @@
+/* About Page Styles */
+.about {
+  min-height: calc(100vh - 80px);
+  /* Background inherited from App.css */
+  color: #e5e7eb;
+  padding-top: 8rem;
+}
+
+.section-title {
+  color: #f9fafb;
+  position: relative;
+  display: inline-block;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  width: 60px;
+  height: 3px;
+  background-color: #00adb5;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.service-card {
+  transition: all 0.3s ease;
+  border-radius: 15px !important;
+  background: rgba(255, 255, 255, 0.05);
+  /* Glassmorphism */
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.05) !important;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 15px;
+}
+
+.service-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 217, 255, 0.2) !important;
+  border-color: rgba(0, 217, 255, 0.3);
+}
+
+.text-info {
+  color: #00D9FF !important;
+}
+
+/* Badge Styles from Home.css if needed specific overrides */
+.badge {
+  transition: all 0.3s ease;
+}
+
+.badge:hover {
+  background-color: #00adb5 !important;
+  color: white !important;
+  transform: translateY(-3px);
+  border-color: #00adb5 !important;
+}
+
+/* Certifications Scrolling Animation */
+.certifications-scroll-container {
+  overflow: hidden;
+  width: 100%;
+  padding: 2rem 0;
+  position: relative;
+}
+
+.certifications-scroll-wrapper {
+  display: flex;
+  gap: 2rem;
+  animation: scroll-certifications 25s linear infinite;
+  width: fit-content;
+}
+
+.certification-card {
+  flex: 0 0 300px;
+  min-width: 300px;
+}
+
+@keyframes scroll-certifications {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Pause animation on hover */
+.certifications-scroll-wrapper:hover {
+  animation-play-state: paused;
+}
+
+/* Achievements Scrolling Animation */
+.achievements-scroll-container {
+  overflow: hidden;
+  width: 100%;
+  padding: 2rem 0;
+  position: relative;
+}
+
+.achievements-scroll-wrapper {
+  display: flex;
+  gap: 2rem;
+  animation: scroll-achievements 25s linear infinite;
+  width: fit-content;
+}
+
+.achievement-card {
+  flex: 0 0 400px;
+  min-width: 400px;
+}
+
+@keyframes scroll-achievements {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Pause animation on hover */
+.achievements-scroll-wrapper:hover {
+  animation-play-state: paused;
+}
+
+/* Responsive adjustments for certifications and achievements containers */
+@media (max-width: 768px) {
+  .certification-card {
+    flex: 0 0 280px;
+    min-width: 280px;
+  }
+
+  .achievement-card {
+    flex: 0 0 350px;
+    min-width: 350px;
+  }
+
+  .certifications-scroll-wrapper,
+  .achievements-scroll-wrapper {
+    gap: 1.5rem;
+  }
+}
+
+/* Timeline Styles */
+.timeline-container {
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem 0;
+}
+
+.timeline-line {
+  position: absolute;
+  left: 50px;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background-color: #00BFFF;
+  transform: translateX(-50%);
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 3rem;
+  padding-left: 100px;
+}
+
+.timeline-icon {
+  position: absolute;
+  left: 50px;
+  top: 0;
+  width: 60px;
+  height: 60px;
+  background-color: #202179;
+  border: 4px solid #00BFFF;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: translateX(-50%);
+  z-index: 2;
+  box-shadow: 0 0 0 4px #fff, 0 0 0 8px #00BFFF;
+}
+
+.timeline-content .card {
+  border-radius: 15px;
+  border-left: 5px solid #00BFFF !important;
+  transition: transform 0.3s ease;
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 30%, #0f3460 60%, #0a2e4a 85%, #0d3d3d 100%);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.timeline-content .card:hover {
+  transform: translateX(10px);
+  background: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.text-skyblue {
+  color: #00BFFF !important;
+}
+
+.timeline-content .card .text-secondary {
+  color: rgba(255, 255, 255, 0.7) !important;
+}
+
+@media (max-width: 768px) {
+  .timeline-line {
+    left: 20px;
+  }
+
+  .timeline-icon {
+    left: 20px;
+    width: 40px;
+    height: 40px;
+    font-size: 1rem;
+  }
+
+  .timeline-item {
+    padding-left: 60px;
+    margin-bottom: 2rem;
+  }
+
+  .timeline-content .card {
+    padding: 1.5rem !important;
+  }
+}

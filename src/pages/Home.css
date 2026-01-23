@@ -1,0 +1,414 @@
+/* ===================================
+   MODERN HOME SECTION STYLES
+   =================================== */
+
+.home {
+    /* Background styles inherited from App.css */
+    width: 100%;
+    position: relative;
+    padding: 8rem 1rem 6rem 1rem;
+    overflow: hidden;
+}
+
+/* Background Animation Container */
+.home-background {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    height: 80%;
+    z-index: 0;
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+.home>.container {
+    position: relative;
+    z-index: 1;
+}
+
+/* ===================================
+   HERO SECTION
+   =================================== */
+
+.hero-title {
+    color: #F9FAFB;
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+    margin-bottom: 1.5rem;
+    animation: fadeInUp 1s ease-out;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.hero-title .text-info {
+    color: #00D9FF !important;
+    text-shadow: 0 0 30px rgba(0, 217, 255, 0.4);
+    background: linear-gradient(135deg, #00D9FF 0%, #06B6D4 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.lead {
+    color: #E5E7EB !important;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    opacity: 0.95;
+}
+
+.text-secondary {
+    color: #D1D5DB !important;
+    opacity: 0.9;
+}
+
+/* ===================================
+   BUTTONS
+   =================================== */
+
+.btn-info {
+    background: linear-gradient(135deg, #00D9FF 0%, #06B6D4 100%);
+    border: none;
+    color: #1a1a2e;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 20px rgba(0, 217, 255, 0.4);
+}
+
+.btn-info:hover {
+    background: linear-gradient(135deg, #06B6D4 0%, #00D9FF 100%);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 30px rgba(0, 217, 255, 0.6);
+    color: #1a1a2e;
+}
+
+.btn-outline-info {
+    color: #00D9FF;
+    border-color: #00D9FF;
+    border-width: 2px;
+    transition: all 0.3s ease;
+}
+
+.btn-outline-info:hover {
+    background: linear-gradient(135deg, #00D9FF 0%, #06B6D4 100%);
+    border-color: #00D9FF;
+    transform: translateY(-3px);
+    color: #1a1a2e;
+    box-shadow: 0 6px 20px rgba(0, 217, 255, 0.4);
+}
+
+/* ===================================
+   HERO IMAGE
+   =================================== */
+
+.hero-image {
+    width: 350px;
+    height: 350px;
+    min-width: 350px;
+    min-height: 350px;
+    object-fit: cover;
+    transition: all 0.3s ease;
+    border-radius: 50%;
+    box-shadow:
+        0 10px 40px rgba(0, 0, 0, 0.4),
+        0 0 0 10px rgba(0, 217, 255, 0.1),
+        0 0 0 20px rgba(0, 217, 255, 0.05);
+    border: 4px solid rgba(0, 217, 255, 0.2);
+}
+
+.hero-image:hover {
+    transform: scale(1.05);
+    box-shadow:
+        0 15px 50px rgba(0, 0, 0, 0.5),
+        0 0 0 12px rgba(0, 217, 255, 0.2),
+        0 0 0 24px rgba(0, 217, 255, 0.1);
+}
+
+/* ===================================
+   SECTION TITLES
+   =================================== */
+
+.section-title {
+    font-weight: 700;
+    color: #F9FAFB;
+    position: relative;
+    display: inline-block;
+    margin-bottom: 2rem;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, #00D9FF 0%, #06B6D4 100%);
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    box-shadow: 0 0 10px rgba(0, 217, 255, 0.5);
+}
+
+/* ===================================
+   TECH STACK
+   =================================== */
+
+.tech-stack .badge {
+    transition: all 0.3s ease;
+    cursor: pointer;
+    background: rgba(255, 255, 255, 0.05) !important;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #E5E7EB !important;
+    font-weight: 500;
+}
+
+.tech-stack .badge:hover {
+    background: linear-gradient(135deg, #00D9FF 0%, #06B6D4 100%) !important;
+    color: #eeeef3 !important;
+    transform: translateY(-5px);
+    border-color: #00D9FF;
+    box-shadow: 0 8px 20px rgba(0, 217, 255, 0.4);
+}
+
+/* ===================================
+   SERVICE CARDS
+   =================================== */
+.service-card {
+    transition: all 0.3s ease;
+    background: rgba(255, 255, 255, 0.05) !important;
+    /* Semi-transparent */
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    border-radius: 15px !important;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0, 217, 255, 0.2) !important;
+    background: rgba(255, 255, 255, 0.08) !important;
+    border-color: rgba(0, 217, 255, 0.3) !important;
+}
+
+.service-card i {
+    color: #00D9FF !important;
+}
+
+.service-card h3 {
+    color: #F9FAFB;
+    font-weight: 600;
+}
+
+.service-card p {
+    color: #D1D5DB !important;
+}
+
+/* ===================================
+   ANIMATIONS
+   =================================== */
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Ensure icons are visible */
+.fas {
+    display: inline-block;
+}
+
+/* ===================================
+   RESPONSIVE DESIGN
+   =================================== */
+
+/* Mobile styles (default - up to 767px) */
+@media (max-width: 767px) {
+    .home {
+        padding: 1rem 0.5rem 4rem 0.5rem;
+    }
+
+    .home::before,
+    .home::after {
+        width: 250px;
+        height: 250px;
+        opacity: 0.1;
+    }
+
+    .home-background {
+        opacity: 0.3;
+        width: 100%;
+        height: 100%;
+    }
+
+    .hero-title {
+        font-size: 2.5rem !important;
+        line-height: 1.2;
+        margin-bottom: 1rem !important;
+        word-wrap: break-word;
+    }
+
+    .lead {
+        font-size: 1rem !important;
+        margin-bottom: 2rem !important;
+        padding: 0 1rem;
+    }
+
+    .fs-5 {
+        font-size: 0.9rem !important;
+    }
+
+    /* Touch-friendly buttons with spacing */
+    .d-flex.gap-3 {
+        flex-direction: column;
+        gap: 1rem !important;
+        width: 100%;
+        padding: 0 2rem;
+    }
+
+    .btn-lg {
+        width: 100%;
+        max-width: 100%;
+        min-height: 50px;
+        padding: 12px 24px !important;
+        font-size: 1.1rem !important;
+    }
+
+    .hero-image {
+        width: 250px;
+        height: 250px;
+        min-width: 250px;
+        min-height: 250px;
+        margin: 3rem auto 1rem;
+        display: block;
+    }
+
+    /* Tech Stack - better mobile layout */
+    .tech-stack {
+        justify-content: center;
+        gap: 0.5rem !important;
+    }
+
+    .tech-stack .badge {
+        padding: 0.5rem 1rem !important;
+        font-size: 0.875rem !important;
+        min-height: 44px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    /* Service cards */
+    .service-card {
+        margin-bottom: 1rem;
+    }
+
+    .service-card i {
+        font-size: 2rem !important;
+    }
+
+    .service-card h3 {
+        font-size: 1.1rem !important;
+    }
+
+    .service-card p {
+        font-size: 0.9rem !important;
+    }
+
+    /* Section spacing */
+    .row.py-5 {
+        padding-top: 2rem !important;
+        padding-bottom: 2rem !important;
+    }
+
+    .section-title {
+        font-size: 1.5rem;
+        margin-bottom: 1.5rem !important;
+    }
+}
+
+/* Tablet styles (768px to 991px) */
+@media (min-width: 768px) and (max-width: 991px) {
+    .hero-title {
+        font-size: 2.5rem;
+    }
+
+    .lead {
+        font-size: 1.25rem;
+    }
+
+    .hero-image {
+        width: 280px;
+        height: 280px;
+        min-width: 280px;
+        min-height: 280px;
+        margin: 2rem auto 0;
+        display: block;
+    }
+
+    .btn-lg {
+        width: auto;
+        min-height: 48px;
+    }
+
+    .home-background {
+        opacity: 0.5;
+    }
+
+    .home::before,
+    .home::after {
+        width: 300px;
+        height: 300px;
+    }
+}
+
+/* Desktop styles (992px and up) */
+@media (min-width: 992px) {
+    .hero-title {
+        font-size: 3.5rem;
+    }
+
+    .lead {
+        font-size: 1.5rem;
+    }
+
+    .btn-lg {
+        width: auto;
+        min-height: 48px;
+    }
+}
+
+/* ===================================
+   ACCESSIBILITY
+   =================================== */
+
+.btn-info:focus,
+.btn-outline-info:focus,
+.tech-stack .badge:focus,
+.service-card:focus {
+    outline: 2px solid #00D9FF;
+    outline-offset: 4px;
+}
+
+/* Reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+
+    .hero-title,
+    .hero-image,
+    .btn-info,
+    .btn-outline-info,
+    .tech-stack .badge,
+    .service-card,
+    .home::before,
+    .home::after {
+        animation: none;
+        transition: none;
+    }
+}
