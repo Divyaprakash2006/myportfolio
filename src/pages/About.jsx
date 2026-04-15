@@ -15,10 +15,6 @@ function About() {
           </div>
         </div>
 
-
-
-
-
         {/* Education Section */}
         <div className="row mb-5">
           <div className="col-12">
@@ -77,102 +73,6 @@ function About() {
                 </div>
               </div>
 
-            </div>
-          </div>
-        </div>
-
-
-
-        {/* Achievements Section */}
-        <div className="row mb-5">
-          <div className="col-12">
-            <h2 className="h3 mb-4 text-center section-title">My Achievements</h2>
-          </div>
-          <div className="col-12">
-            <div className="achievements-scroll-container">
-              <div className="achievements-scroll-wrapper">
-                {/* Original set of achievement cards */}
-                <div className="achievement-card">
-                  <div className="card h-100 border-0 service-card">
-                    <div className="card-body p-4 text-center">
-                      <div className="mb-3">
-                        <img src="/hackthon.png" alt="Hackathon Participant" className="img-fluid" style={{ maxHeight: '200px', objectFit: 'contain' }} />
-                      </div>
-                      <h3 className="h4 card-title mb-3">Hackathon Participant</h3>
-                      <p className="card-text text-secondary">
-                        Participated in the National Web Development Hackathon 2025
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <div className="achievement-card">
-                  <div className="card h-100 border-0 service-card">
-                    <div className="card-body p-4 text-center">
-                      <div className="mb-3">
-                        <img src="/intern.png" alt="Internship" className="img-fluid" style={{ maxHeight: '200px', objectFit: 'contain' }} />
-                      </div>
-                      <h3 className="h4 card-title mb-3">Internship</h3>
-                      <p className="card-text text-secondary">
-                        Gained practical experience in building and maintaining web applications during my internship.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <div className="achievement-card">
-                  <div className="card h-100 border-0 service-card">
-                    <div className="card-body p-4 text-center">
-                      <div className="mb-3">
-                        <img src="/servicenow intern.png" alt="ServiceNow Virtual Internship" className="img-fluid" style={{ maxHeight: '200px', objectFit: 'contain' }} />
-                      </div>
-                      <h3 className="h4 card-title mb-3">ServiceNow Internship</h3>
-                      <p className="card-text text-secondary">
-                        Completed Virtual Internship Program focusing on Agentic AI and System Administration.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Duplicate set for seamless loop */}
-                <div className="achievement-card">
-                  <div className="card h-100 border-0 service-card">
-                    <div className="card-body p-4 text-center">
-                      <div className="mb-3">
-                        <img src="/hackthon.png" alt="Hackathon Participant" className="img-fluid" style={{ maxHeight: '200px', objectFit: 'contain' }} />
-                      </div>
-                      <h3 className="h4 card-title mb-3">Hackathon Participant</h3>
-                      <p className="card-text text-secondary">
-                        Participated in the National Web Development Hackathon 2025
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <div className="achievement-card">
-                  <div className="card h-100 border-0 service-card">
-                    <div className="card-body p-4 text-center">
-                      <div className="mb-3">
-                        <img src="/intern.png" alt="Internship" className="img-fluid" style={{ maxHeight: '200px', objectFit: 'contain' }} />
-                      </div>
-                      <h3 className="h4 card-title mb-3">Internship</h3>
-                      <p className="card-text text-secondary">
-                        Gained practical experience in building and maintaining web applications during my internship.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <div className="achievement-card">
-                  <div className="card h-100 border-0 service-card">
-                    <div className="card-body p-4 text-center">
-                      <div className="mb-3">
-                        <img src="/servicenow intern.png" alt="ServiceNow Virtual Internship" className="img-fluid" style={{ maxHeight: '200px', objectFit: 'contain' }} />
-                      </div>
-                      <h3 className="h4 card-title mb-3">ServiceNow Internship</h3>
-                      <p className="card-text text-secondary">
-                        Completed Virtual Internship Program focusing on Agentic AI and System Administration.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
             </div>
           </div>
         </div>
@@ -247,7 +147,7 @@ function About() {
                 <div className="certification-card">
                   <div className="card h-100 border-0 service-card shadow-sm overflow-hidden">
                     <div style={{ height: '200px', overflow: 'hidden' }}>
-                      <img src="/Nptel.png" className="w-100 h-100" alt="Nptel" style={{ objectFit: 'contain', padding: '10px' }} />
+                      <img src="/Nptel2.png" className="w-100 h-100" alt="Nptel" style={{ objectFit: 'contain', padding: '10px' }} />
                     </div>
                     <div className="card-body text-start p-4">
                       <h5 className="card-title fw-bold mb-2">NPTEL Certified</h5>

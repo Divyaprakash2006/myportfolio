@@ -36,7 +36,7 @@ function Home() {
                                 View My Work
                             </Link>
                             <a 
-                                href="Divyaprakash V_resume.pdf" 
+                                href="professional-3.pdf" 
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="btn btn-outline-info btn-lg px-4 py-3 rounded-pill"

@@ -2,30 +2,27 @@ import './Projects.css';
 
 function Projects() {
   const projects = [
-   {
-  id: 1,
-  title: "LeeTracker",
-  description: "LeeTracker is a modern web application built with React and TypeScript, powered by a GraphQL API and MongoDB for efficient data management, real-time tracking, and scalable querying.",
-  tech: "React, TypeScript, Node.js, GraphQL, MongoDB",
-  link: "https://leetracker.vercel.app/login"
-}
-,
-   {
-  id: 2,
-  title: "Nexus Online Learning & LMS Platform",
-  description: "Nexus is an online learning and LMS platform built with React (JavaScript), using a RESTful API and MongoDB to manage courses, users, and learning progress efficiently.",
-  tech: "React (JavaScript), Node.js, REST API, MongoDB",
-  link: "https://nexuslms.vercel.app/login"
-}
-,
-   {
-  id: 3,
-  title: "Portfolio",
-  description: "A personal portfolio website built with React, JavaScript, and CSS to showcase projects, skills, and experience with a responsive and modern UI.",
-  tech: "React, JavaScript, CSS",
-  link: "#"
-}
-
+    {
+      id: 1,
+      title: "LeeTracker",
+      description: "LeeTracker is a modern web application built with React and TypeScript, powered by a GraphQL API and MongoDB for efficient data management, real-time tracking, and scalable querying.",
+      tech: "React, TypeScript, Node.js, GraphQL, MongoDB",
+      link: "#"
+    },
+    {
+      id: 2,
+      title: "Online Test Management System",
+      description: "A comprehensive web application for creating, managing, and conducting online tests. Features include test creation, timer-based exam sessions, real-time result tracking, and detailed performance analytics for students and administrators.",
+      tech: "React, JSX, CSS, Node.js, MongoDB",
+      link: "#"
+    },
+    {
+      id: 3,
+      title: "Leave and Attendance Management System",
+      description: "An enterprise-level system for managing employee leave requests and attendance tracking. Includes features for leave application approval workflow, attendance records, dashboard analytics, and automated report generation for HR management.",
+      tech: "React, JSX, CSS, Node.js, MongoDB",
+      link: "#"
+    }
   ];
 
   return (
