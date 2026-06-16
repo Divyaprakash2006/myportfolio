@@ -36,7 +36,7 @@ function Home() {
                                 View My Work
                             </Link>
                             <a 
-                                href="professional-3.pdf" 
+                                href="/resume.pdf" 
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="btn btn-outline-info btn-lg px-4 py-3 rounded-pill"
@@ -50,7 +50,7 @@ function Home() {
                     <div className="col-lg-6 text-center mt-5 mt-lg-0">
                         <div className="hero-image-container">
                             <img
-                                src="/myphoto.jpeg"
+                                src="/my_photo.jpeg"
                                 alt="Divyaprakash Venkatachalam - Full Stack Developer"
                                 className="img-fluid hero-image"
                                 loading="eager"
