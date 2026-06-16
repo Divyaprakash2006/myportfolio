@@ -28,7 +28,7 @@ function Projects() {
       title: "Real-Time Chat Application",
       description: "A dynamic real-time messaging application supporting private and group chat rooms. Built with a React frontend (JSX) for responsive interactions, and a Java Spring Boot backend utilizing WebSockets for low-latency message delivery and user presence tracking.",
       tech: "React, JSX, CSS, Java, Spring Boot, WebSockets",
-      link: "#"
+      link: "https://chatapp-kappa-one.vercel.app/"
     }
   ];
 
