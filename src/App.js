@@ -5,6 +5,7 @@ import Home from './pages/Home';
 import About from './pages/About';
 import Projects from './pages/Projects';
 import Preloader from './components/Preloader';
+import BGMPlayer from './components/BGMPlayer';
 
 import './App.css';
 
@@ -25,10 +26,11 @@ function App() {
   }, [loading]);
 
   return (
-    <Router>
+    <Router future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
       <div className="App">
         {loading && <Preloader onComplete={() => setLoading(false)} />}
         <Navbar />
+        {!loading && <BGMPlayer />}
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
