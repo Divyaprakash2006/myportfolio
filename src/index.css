@@ -13,3 +13,8 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }
+
+body.no-scroll {
+  overflow: hidden !important;
+  height: 100vh;
+}
