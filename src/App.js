@@ -1,36 +1,19 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Home from './pages/Home';
 import About from './pages/About';
 import Projects from './pages/Projects';
-import Preloader from './components/Preloader';
 import BGMPlayer from './components/BGMPlayer';
 
 import './App.css';
 
 function App() {
-  const [loading, setLoading] = useState(() => {
-    return sessionStorage.getItem('hasSeenPreloader') !== 'true';
-  });
-
-  useEffect(() => {
-    if (loading) {
-      document.body.classList.add('no-scroll');
-    } else {
-      document.body.classList.remove('no-scroll');
-    }
-    return () => {
-      document.body.classList.remove('no-scroll');
-    };
-  }, [loading]);
-
   return (
     <Router future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
       <div className="App">
-        {loading && <Preloader onComplete={() => setLoading(false)} />}
         <Navbar />
-        {!loading && <BGMPlayer />}
+        <BGMPlayer />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />

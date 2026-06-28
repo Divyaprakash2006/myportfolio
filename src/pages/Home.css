@@ -32,6 +32,54 @@
    HERO SECTION
    =================================== */
 
+.visitor-greeting-banner {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-family: 'Consolas', 'Lucida Console', monospace;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+    animation: fadeInUp 0.8s ease-out;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.visitor-greeting-banner.role-hr {
+    border-color: rgba(0, 229, 255, 0.2);
+    background: rgba(0, 229, 255, 0.04);
+    color: #7ff8ff;
+    box-shadow: 0 0 10px rgba(0, 229, 255, 0.15), inset 0 0 5px rgba(0, 229, 255, 0.05);
+}
+.visitor-greeting-banner.role-hr .banner-bracket { color: #00e5ff; }
+
+.visitor-greeting-banner.role-employee {
+    border-color: rgba(16, 185, 129, 0.2);
+    background: rgba(16, 185, 129, 0.04);
+    color: #10b981;
+    box-shadow: 0 0 10px rgba(16, 185, 129, 0.15), inset 0 0 5px rgba(16, 185, 129, 0.05);
+}
+.visitor-greeting-banner.role-employee .banner-bracket { color: #10b981; }
+
+.visitor-greeting-banner.role-guest {
+    border-color: rgba(147, 51, 234, 0.2);
+    background: rgba(147, 51, 234, 0.04);
+    color: #d8b4fe;
+    box-shadow: 0 0 10px rgba(147, 51, 234, 0.15), inset 0 0 5px rgba(147, 51, 234, 0.05);
+}
+.visitor-greeting-banner.role-guest .banner-bracket { color: #a855f7; }
+
+.banner-bracket {
+    font-weight: 800;
+}
+
+.banner-text {
+    text-transform: uppercase;
+}
+
 .hero-title {
     color: #F9FAFB;
     font-weight: 700;

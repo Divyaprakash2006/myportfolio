@@ -1,8 +1,13 @@
+import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { DotLottieReact } from '@lottiefiles/dotlottie-react';
 import './Home.css';
 
 function Home() {
+    useEffect(() => {
+        // page loaded
+    }, []);
+
     return (
         <div className="home">
             {/* Background Animation */}
@@ -17,7 +22,8 @@ function Home() {
             <div className="container">
                 {/* Hero Section */}
                 <div className="row py-5 align-items-center">
-                    <div className="col-lg-6">
+                    <div className="col-lg-6 text-start">
+
                         <h1 className="display-4 fw-bold mb-4 hero-title">
                             Hi, I'm <span className="text-info">Divyaprakash Venkatachalam</span>
                         </h1>

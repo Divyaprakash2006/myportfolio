@@ -297,3 +297,208 @@
         transform: translateY(0);
     }
 }
+
+/* ==========================================================================
+   Visitor Badge & Dropdown Styles (Navbar Widget)
+   ========================================================================== */
+
+.visitor-badge-container {
+    position: relative;
+    margin-left: 20px;
+    margin-right: auto; /* Push navigations links to the right */
+    display: flex;
+    align-items: center;
+    z-index: 1050;
+}
+
+/* Pill design */
+.visitor-badge-pill {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-family: 'Consolas', 'Lucida Console', monospace;
+    font-size: 11px;
+    font-weight: 700;
+    cursor: pointer;
+    background: rgba(255, 255, 255, 0.03);
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.visitor-badge-pill:hover {
+    transform: translateY(-1px);
+}
+
+/* Role-specific styles for pill */
+.visitor-badge-pill.role-hr {
+    border: 1px solid rgba(0, 229, 255, 0.3);
+    color: #7ff8ff;
+    box-shadow: 0 0 10px rgba(0, 229, 255, 0.1);
+}
+.visitor-badge-pill.role-hr:hover {
+    background: rgba(0, 229, 255, 0.08);
+    box-shadow: 0 0 15px rgba(0, 229, 255, 0.25);
+}
+
+.visitor-badge-pill.role-employee {
+    border: 1px solid rgba(16, 185, 129, 0.3);
+    color: #10b981;
+    box-shadow: 0 0 10px rgba(16, 185, 129, 0.1);
+}
+.visitor-badge-pill.role-employee:hover {
+    background: rgba(16, 185, 129, 0.08);
+    box-shadow: 0 0 15px rgba(16, 185, 129, 0.25);
+}
+
+.visitor-badge-pill.role-guest {
+    border: 1px solid rgba(147, 51, 234, 0.3);
+    color: #d8b4fe;
+    box-shadow: 0 0 10px rgba(147, 51, 234, 0.1);
+}
+.visitor-badge-pill.role-guest:hover {
+    background: rgba(147, 51, 234, 0.08);
+    box-shadow: 0 0 15px rgba(147, 51, 234, 0.25);
+}
+
+.badge-icon {
+    font-size: 13px;
+}
+
+.badge-name {
+    letter-spacing: 0.5px;
+    max-width: 100px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/* Dropdown backdrop and container */
+.visitor-dropdown-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: transparent;
+    z-index: 1030;
+}
+
+.visitor-dropdown-menu {
+    position: absolute;
+    top: calc(100% + 10px);
+    left: 0;
+    width: 280px;
+    z-index: 1040;
+    animation: dropdown-slide-down 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes dropdown-slide-down {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.visitor-info-card {
+    background: rgba(8, 12, 28, 0.9);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+    text-align: left;
+}
+
+.visitor-info-title {
+    font-family: 'Consolas', 'Lucida Console', monospace;
+    font-size: 10px;
+    color: rgba(255, 255, 255, 0.4);
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+    border-bottom: 1px dashed rgba(255, 255, 255, 0.1);
+    padding-bottom: 8px;
+}
+
+.visitor-detail-item {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 12px;
+}
+
+.visitor-detail-item .label {
+    font-family: 'Consolas', 'Lucida Console', monospace;
+    font-size: 9px;
+    color: rgba(255, 255, 255, 0.45);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.visitor-detail-item .value {
+    font-size: 13px;
+    color: #ffffff;
+    font-weight: 600;
+    margin-top: 2px;
+    word-break: break-all;
+}
+
+.visitor-detail-item .email-value {
+    font-family: 'Consolas', 'Lucida Console', monospace;
+    font-size: 12px;
+}
+
+.visitor-detail-item .role-text {
+    font-family: 'Consolas', 'Lucida Console', monospace;
+    font-weight: 700;
+}
+
+.text-hr { color: #00e5ff; text-shadow: 0 0 5px rgba(0, 229, 255, 0.3); }
+.text-employee { color: #10b981; text-shadow: 0 0 5px rgba(16, 185, 129, 0.3); }
+.text-guest { color: #d8b4fe; text-shadow: 0 0 5px rgba(147, 51, 234, 0.3); }
+
+/* Switch identity button */
+.reset-visitor-btn {
+    width: 100%;
+    margin-top: 15px;
+    background: rgba(239, 68, 68, 0.1);
+    border: 1px solid rgba(239, 68, 68, 0.3);
+    color: #ef4444;
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-family: 'Consolas', 'Lucida Console', monospace;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-align: center;
+}
+
+.reset-visitor-btn:hover {
+    background: rgba(239, 68, 68, 0.25);
+    border-color: #ef4444;
+    box-shadow: 0 0 8px rgba(239, 68, 68, 0.2);
+}
+
+/* Responsiveness adjustments for Navbar badge */
+@media (max-width: 991px) {
+    .visitor-badge-container {
+        margin-left: auto;
+        margin-right: 15px; /* Stand right before hamburger */
+    }
+}
+
+@media (max-width: 576px) {
+    .visitor-badge-pill {
+        padding: 6px 10px;
+    }
+    
+    .visitor-badge-pill .badge-name {
+        display: none;
+    }
+    
+    .visitor-dropdown-menu {
+        right: -50px;
+        left: auto;
+        width: 250px;
+    }
+}
