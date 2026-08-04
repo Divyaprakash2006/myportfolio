@@ -1,8 +1,67 @@
+import { useState } from 'react';
 import './About.css';
 
+const certificates = [
+  {
+    id: 'salesforce',
+    title: 'Salesforce Certified',
+    image: '/salesforce.png',
+    description: 'Certified professional in Salesforce platform development and administration.',
+  },
+  {
+    id: 'aws',
+    title: 'AWS Certified',
+    image: '/aws.png',
+    description: 'Validated expertise in safe and secure cloud computing architecture.',
+  },
+  {
+    id: 'servicenow-micro',
+    title: 'ServiceNow Micro',
+    image: '/servicenow.png',
+    description: 'Specialized knowledge in ServiceNow platform fundamentals and workflows.',
+  },
+  {
+    id: 'nptel',
+    title: 'NPTEL Certified',
+    image: '/Nptel2.png',
+    description: 'National Programme on Technology Enhanced Learning certification in specialized domains.',
+  },
+  {
+    id: 'servicenow-intern',
+    title: 'ServiceNow Internship',
+    image: '/servicenow intern.png',
+    description: 'Completed Virtual Internship Program focusing on Agentic AI and System Administration.',
+  },
+];
+
+function CertModal({ cert, onClose }) {
+  if (!cert) return null;
+  return (
+    <div className="cert-modal-overlay" onClick={onClose}>
+      <div className="cert-modal-container" onClick={(e) => e.stopPropagation()}>
+        <button className="cert-modal-close" onClick={onClose} aria-label="Close">
+          <i className="fas fa-times"></i>
+        </button>
+        <div className="cert-modal-img-wrap">
+          <img src={cert.image} alt={cert.title} className="cert-modal-img" />
+        </div>
+        <div className="cert-modal-body">
+          <h3 className="cert-modal-title">{cert.title}</h3>
+          <p className="cert-modal-desc">{cert.description}</p>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 function About() {
+  const [activeCert, setActiveCert] = useState(null);
+
   return (
     <div className="about">
+      {/* Certificate Modal */}
+      <CertModal cert={activeCert} onClose={() => setActiveCert(null)} />
+
       <div className="container py-5">
         <div className="row justify-content-center mb-5">
           <div className="col-lg-8 text-center">
@@ -105,139 +164,50 @@ function About() {
             <div className="certifications-scroll-container">
               <div className="certifications-scroll-wrapper">
                 {/* First set of cards */}
-                <div className="certification-card">
-                  <div className="card h-100 border-0 service-card shadow-sm overflow-hidden">
-                    <div style={{ height: '200px', overflow: 'hidden' }}>
-                      <img src="/salesforce.png" className="w-100 h-100" alt="Salesforce Certified" style={{ objectFit: 'contain', padding: '10px' }} />
-                    </div>
-                    <div className="card-body text-start p-4">
-                      <h5 className="card-title fw-bold mb-2">Salesforce Certified</h5>
-                      <p className="card-text text-secondary small">
-                        Certified professional in Salesforce platform development and administration.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <div className="certification-card">
-                  <div className="card h-100 border-0 service-card shadow-sm overflow-hidden">
-                    <div style={{ height: '200px', overflow: 'hidden' }}>
-                      <img src="/aws.png" className="w-100 h-100" alt="AWS Certified" style={{ objectFit: 'contain', padding: '10px' }} />
-                    </div>
-                    <div className="card-body text-start p-4">
-                      <h5 className="card-title fw-bold mb-2">AWS Certified</h5>
-                      <p className="card-text text-secondary small">
-                        Validated expertise in safe and secure cloud computing architecture.
-                      </p>
+                {certificates.map((cert) => (
+                  <div
+                    key={cert.id}
+                    className="certification-card"
+                    onClick={() => setActiveCert(cert)}
+                    style={{ cursor: 'pointer' }}
+                  >
+                    <div className="card h-100 border-0 service-card shadow-sm overflow-hidden cert-clickable">
+                      <div style={{ height: '200px', overflow: 'hidden' }}>
+                        <img src={cert.image} className="w-100 h-100" alt={cert.title} style={{ objectFit: 'contain', padding: '10px' }} />
+                      </div>
+                      <div className="card-body text-start p-4">
+                        <h5 className="card-title fw-bold mb-2">{cert.title}</h5>
+                        <p className="card-text text-secondary small">{cert.description}</p>
+                        <span className="cert-view-hint">
+                          <i className="fas fa-expand-alt me-1"></i> Click to view
+                        </span>
+                      </div>
                     </div>
                   </div>
-                </div>
-                <div className="certification-card">
-                  <div className="card h-100 border-0 service-card shadow-sm overflow-hidden">
-                    <div style={{ height: '200px', overflow: 'hidden' }}>
-                      <img src="/servicenow.png" className="w-100 h-100" alt="Servicenow-micro Certificate" style={{ objectFit: 'contain', padding: '10px' }} />
-                    </div>
-                    <div className="card-body text-start p-4">
-                      <h5 className="card-title fw-bold mb-2">ServiceNow Micro</h5>
-                      <p className="card-text text-secondary small">
-                        Specialized knowledge in ServiceNow platform fundamentals and workflows.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <div className="certification-card">
-                  <div className="card h-100 border-0 service-card shadow-sm overflow-hidden">
-                    <div style={{ height: '200px', overflow: 'hidden' }}>
-                      <img src="/Nptel2.png" className="w-100 h-100" alt="Nptel" style={{ objectFit: 'contain', padding: '10px' }} />
-                    </div>
-                    <div className="card-body text-start p-4">
-                      <h5 className="card-title fw-bold mb-2">NPTEL Certified</h5>
-                      <p className="card-text text-secondary small">
-                        National Programme on Technology Enhanced Learning certification in specialized domains.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <div className="certification-card">
-                  <div className="card h-100 border-0 service-card shadow-sm overflow-hidden">
-                    <div style={{ height: '200px', overflow: 'hidden' }}>
-                      <img src="/servicenow intern.png" className="w-100 h-100" alt="ServiceNow Virtual Internship" style={{ objectFit: 'contain', padding: '10px' }} />
-                    </div>
-                    <div className="card-body text-start p-4">
-                      <h5 className="card-title fw-bold mb-2">ServiceNow Internship</h5>
-                      <p className="card-text text-secondary small">
-                        Completed Virtual Internship Program focusing on Agentic AI and System Administration.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-
+                ))}
 
                 {/* Duplicate set for seamless loop */}
-                <div className="certification-card">
-                  <div className="card h-100 border-0 service-card shadow-sm overflow-hidden">
-                    <div style={{ height: '200px', overflow: 'hidden' }}>
-                      <img src="/salesforce.png" className="w-100 h-100" alt="Salesforce Certified" style={{ objectFit: 'contain', padding: '10px' }} />
-                    </div>
-                    <div className="card-body text-start p-4">
-                      <h5 className="card-title fw-bold mb-2">Salesforce Certified</h5>
-                      <p className="card-text text-secondary small">
-                        Certified professional in Salesforce platform development and administration.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <div className="certification-card">
-                  <div className="card h-100 border-0 service-card shadow-sm overflow-hidden">
-                    <div style={{ height: '200px', overflow: 'hidden' }}>
-                      <img src="/aws.png" className="w-100 h-100" alt="AWS Certified" style={{ objectFit: 'contain', padding: '10px' }} />
-                    </div>
-                    <div className="card-body text-start p-4">
-                      <h5 className="card-title fw-bold mb-2">AWS Certified</h5>
-                      <p className="card-text text-secondary small">
-                        Validated expertise in safe and secure cloud computing architecture.
-                      </p>
+                {certificates.map((cert) => (
+                  <div
+                    key={cert.id + '-dup'}
+                    className="certification-card"
+                    onClick={() => setActiveCert(cert)}
+                    style={{ cursor: 'pointer' }}
+                  >
+                    <div className="card h-100 border-0 service-card shadow-sm overflow-hidden cert-clickable">
+                      <div style={{ height: '200px', overflow: 'hidden' }}>
+                        <img src={cert.image} className="w-100 h-100" alt={cert.title} style={{ objectFit: 'contain', padding: '10px' }} />
+                      </div>
+                      <div className="card-body text-start p-4">
+                        <h5 className="card-title fw-bold mb-2">{cert.title}</h5>
+                        <p className="card-text text-secondary small">{cert.description}</p>
+                        <span className="cert-view-hint">
+                          <i className="fas fa-expand-alt me-1"></i> Click to view
+                        </span>
+                      </div>
                     </div>
                   </div>
-                </div>
-                <div className="certification-card">
-                  <div className="card h-100 border-0 service-card shadow-sm overflow-hidden">
-                    <div style={{ height: '200px', overflow: 'hidden' }}>
-                      <img src="/servicenow.png" className="w-100 h-100" alt="Servicenow-micro Certificate" style={{ objectFit: 'contain', padding: '10px' }} />
-                    </div>
-                    <div className="card-body text-start p-4">
-                      <h5 className="card-title fw-bold mb-2">ServiceNow Micro</h5>
-                      <p className="card-text text-secondary small">
-                        Specialized knowledge in ServiceNow platform fundamentals and workflows.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <div className="certification-card">
-                  <div className="card h-100 border-0 service-card shadow-sm overflow-hidden">
-                    <div style={{ height: '200px', overflow: 'hidden' }}>
-                      <img src="/Nptel.png" className="w-100 h-100" alt="Nptel" style={{ objectFit: 'contain', padding: '10px' }} />
-                    </div>
-                    <div className="card-body text-start p-4">
-                      <h5 className="card-title fw-bold mb-2">NPTEL Certified</h5>
-                      <p className="card-text text-secondary small">
-                        National Programme on Technology Enhanced Learning certification in specialized domains.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <div className="certification-card">
-                  <div className="card h-100 border-0 service-card shadow-sm overflow-hidden">
-                    <div style={{ height: '200px', overflow: 'hidden' }}>
-                      <img src="/servicenow intern.png" className="w-100 h-100" alt="ServiceNow Virtual Internship" style={{ objectFit: 'contain', padding: '10px' }} />
-                    </div>
-                    <div className="card-body text-start p-4">
-                      <h5 className="card-title fw-bold mb-2">ServiceNow Internship</h5>
-                      <p className="card-text text-secondary small">
-                        Completed Virtual Internship Program focusing on Agentic AI and System Administration.
-                      </p>
-                    </div>
-                  </div>
-                </div>
+                ))}
 
               </div>
             </div>

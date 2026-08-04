@@ -144,6 +144,139 @@
   animation-play-state: paused;
 }
 
+/* ── Certificate "Click to view" hint ─────────────────────────── */
+.cert-clickable {
+  position: relative;
+}
+
+.cert-view-hint {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.75rem;
+  color: #00adb5;
+  opacity: 0;
+  transform: translateY(6px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+}
+
+.cert-clickable:hover .cert-view-hint {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── Certificate Modal Overlay ────────────────────────────────── */
+.cert-modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  animation: cert-fade-in 0.25s ease;
+}
+
+@keyframes cert-fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* ── Certificate Modal Container ──────────────────────────────── */
+.cert-modal-container {
+  position: relative;
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 40%, #0f3460 100%);
+  border: 1px solid rgba(0, 173, 181, 0.35);
+  border-radius: 20px;
+  max-width: 700px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(0, 217, 255, 0.15);
+  animation: cert-slide-up 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@keyframes cert-slide-up {
+  from { opacity: 0; transform: scale(0.88) translateY(30px); }
+  to   { opacity: 1; transform: scale(1)   translateY(0);     }
+}
+
+/* ── Close Button ─────────────────────────────────────────────── */
+.cert-modal-close {
+  position: absolute;
+  top: 14px;
+  right: 16px;
+  z-index: 10;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #e5e7eb;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s, transform 0.2s;
+  font-size: 1rem;
+}
+
+.cert-modal-close:hover {
+  background: rgba(0, 173, 181, 0.3);
+  color: #00adb5;
+  transform: rotate(90deg);
+}
+
+/* ── Modal Image ──────────────────────────────────────────────── */
+.cert-modal-img-wrap {
+  background: rgba(255, 255, 255, 0.03);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  border-radius: 20px 20px 0 0;
+}
+
+.cert-modal-img {
+  max-height: 420px;
+  width: 100%;
+  object-fit: contain;
+  border-radius: 10px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+}
+
+/* ── Modal Body ───────────────────────────────────────────────── */
+.cert-modal-body {
+  padding: 1.5rem 2rem 2rem;
+}
+
+.cert-modal-title {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #00adb5;
+  margin-bottom: 0.5rem;
+}
+
+.cert-modal-desc {
+  color: rgba(229, 231, 235, 0.8);
+  font-size: 0.95rem;
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* ── Mobile ───────────────────────────────────────────────────── */
+@media (max-width: 600px) {
+  .cert-modal-img-wrap { padding: 1.25rem; }
+  .cert-modal-body     { padding: 1rem 1.25rem 1.5rem; }
+  .cert-modal-img      { max-height: 260px; }
+}
+
 /* Responsive adjustments for certifications and achievements containers */
 @media (max-width: 768px) {
   .certification-card {
