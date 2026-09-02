@@ -3,6 +3,15 @@ import './About.css';
 
 const certificates = [
   {
+    id: 'azure-ai-fundamentals',
+    title: 'Microsoft Certified: Azure AI Fundamentals',
+    image: '/azure_ai_fundamentals.png',
+    description: 'Validated foundational knowledge of machine learning, artificial intelligence concepts, and Microsoft Azure AI services.',
+    credentialId: 'A1475BB075699181',
+    certificationNo: '0A4LF4-56D2F5',
+    earnedOn: '10 August 2026',
+  },
+  {
     id: 'salesforce',
     title: 'Salesforce Certified',
     image: '/salesforce.png',
@@ -48,6 +57,21 @@ function CertModal({ cert, onClose }) {
         <div className="cert-modal-body">
           <h3 className="cert-modal-title">{cert.title}</h3>
           <p className="cert-modal-desc">{cert.description}</p>
+          {cert.credentialId && (
+            <p className="cert-modal-meta text-secondary mb-1 small">
+              <strong>Credential ID:</strong> {cert.credentialId}
+            </p>
+          )}
+          {cert.certificationNo && (
+            <p className="cert-modal-meta text-secondary mb-1 small">
+              <strong>Certification No:</strong> {cert.certificationNo}
+            </p>
+          )}
+          {cert.earnedOn && (
+            <p className="cert-modal-meta text-secondary mb-0 small">
+              <strong>Earned on:</strong> {cert.earnedOn}
+            </p>
+          )}
         </div>
       </div>
     </div>

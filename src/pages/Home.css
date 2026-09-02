@@ -106,6 +106,38 @@
     opacity: 0.95;
 }
 
+/* Typewriter Effect Styles */
+.hero-subtitle {
+    min-height: 2.2rem;
+}
+
+.typewriter-container {
+    display: inline-flex;
+    align-items: center;
+    font-weight: 600;
+}
+
+.typewriter-text {
+    background: linear-gradient(135deg, #00D9FF 0%, #38BDF8 50%, #818CF8 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    display: inline-block;
+}
+
+.typewriter-cursor {
+    display: inline-block;
+    color: #00D9FF;
+    margin-left: 3px;
+    font-weight: 400;
+    animation: blink-cursor 0.7s infinite;
+}
+
+@keyframes blink-cursor {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
 .text-secondary {
     color: #D1D5DB !important;
     opacity: 0.9;

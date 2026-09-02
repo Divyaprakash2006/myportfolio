@@ -1,7 +1,54 @@
-import { useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { DotLottieReact } from '@lottiefiles/dotlottie-react';
 import './Home.css';
+
+const TYPEWRITER_TITLES = [
+    'Full Stack Developer',
+    'Salesforce Certified',
+    'AWS Certified',
+    'Microsoft Certified'
+];
+
+function TypewriterSubtitle() {
+    const [titleIndex, setTitleIndex] = useState(0);
+    const [charIndex, setCharIndex] = useState(0);
+    const [isDeleting, setIsDeleting] = useState(false);
+
+    useEffect(() => {
+        const currentTitle = TYPEWRITER_TITLES[titleIndex];
+
+        let speed = isDeleting ? 40 : 80;
+
+        if (!isDeleting && charIndex === currentTitle.length) {
+            speed = 2000;
+        } else if (isDeleting && charIndex === 0) {
+            speed = 300;
+        }
+
+        const timer = setTimeout(() => {
+            if (!isDeleting && charIndex === currentTitle.length) {
+                setIsDeleting(true);
+            } else if (isDeleting && charIndex === 0) {
+                setIsDeleting(false);
+                setTitleIndex((prev) => (prev + 1) % TYPEWRITER_TITLES.length);
+            } else {
+                setCharIndex((prev) => prev + (isDeleting ? -1 : 1));
+            }
+        }, speed);
+
+        return () => clearTimeout(timer);
+    }, [charIndex, isDeleting, titleIndex]);
+
+    return (
+        <span className="typewriter-container">
+            <span className="typewriter-text">
+                {TYPEWRITER_TITLES[titleIndex].substring(0, charIndex)}
+            </span>
+            <span className="typewriter-cursor">|</span>
+        </span>
+    );
+}
 
 function Home() {
     useEffect(() => {
@@ -27,8 +74,8 @@ function Home() {
                         <h1 className="display-4 fw-bold mb-4 hero-title">
                             Hi, I'm <span className="text-info">Divyaprakash Venkatachalam</span>
                         </h1>
-                        <p className="lead fs-4 mb-4">
-                            Full Stack Developer | Web Designer | Problem Solver
+                        <p className="lead fs-4 mb-4 hero-subtitle">
+                            <TypewriterSubtitle />
                         </p>
                         <p className="fs-5 mb-5 text-secondary">
                             I create beautiful and functional websites that solve real problems.
